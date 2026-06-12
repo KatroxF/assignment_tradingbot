@@ -40,7 +40,7 @@ TRADINGBOT/
 ## Installation
 
 ```bash
-git clone <[repository-url](https://github.com/KatroxF/assignment_tradingbot/tree/master)>
+git clone <(https://github.com/KatroxF/assignment_tradingbot/tree/master)>
 cd TRADINGBOT
 
 python -m venv venv
@@ -81,6 +81,15 @@ Order ID: 15030469894
 Status: NEW
 Executed Qty: 0.0000
 ```
+## Screenshots
+
+### CLI Output
+
+![CLI Output](screenshots/output.png)
+
+### Log File
+
+![Log File](screenshots/log.png)
 
 ## Validation Rules
 
