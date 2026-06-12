@@ -1,4 +1,5 @@
 import argparse
+from bot.orders import place_market_order
 
 from bot.orders import (
     place_market_order,
