@@ -1,6 +1,6 @@
 # Binance Futures Testnet Trading Bot
 
-A command-line Python application that places Market and Limit orders on Binance Futures Testnet (USDT-M).
+A command-line Python application that places Market and Limit orders on Binance Futures Demo Environment (USDT-M).
 
 ## Features
 
@@ -12,6 +12,7 @@ A command-line Python application that places Market and Limit orders on Binance
 * Logging support
 * Exception handling
 * Environment variable configuration using `.env`
+* Binance Futures Demo API integration
 
 ---
 
@@ -36,85 +37,57 @@ TRADINGBOT/
 └── README.md
 ```
 
----
-
 ## Installation
 
-Clone the repository:
-
 ```bash
-git clone <[repository-url](https://github.com/KatroxF/assignment_tradingbot)>
+git clone <[repository-url](https://github.com/KatroxF/assignment_tradingbot/tree/master)>
 cd TRADINGBOT
-```
 
-Create a virtual environment:
-
-```bash
 python -m venv venv
-```
-
-Activate the virtual environment:
-
-### Windows
-
-```bash
 venv\Scripts\activate
-```
 
-### Linux / macOS
-
-```bash
-source venv/bin/activate
-```
-
-Install dependencies:
-
-```bash
 pip install -r requirements.txt
 ```
 
----
-
 ## Environment Variables
 
-Create a `.env` file in the project root:
+Create a `.env` file:
 
 ```env
 API_KEY=YOUR_API_KEY
 API_SECRET=YOUR_API_SECRET
 ```
 
-You may use `.env.example` as a template.
-
----
-
 ## Usage
 
-### Place a Market Order
+### Market Order
 
 ```bash
 python cli.py --symbol BTCUSDT --side BUY --type MARKET --quantity 0.001
 ```
 
-### Place a Limit Order
+### Limit Order
 
 ```bash
 python cli.py --symbol BTCUSDT --side SELL --type LIMIT --quantity 0.001 --price 120000
 ```
 
----
-
-## Example Output
+## Example Successful Execution
 
 ```text
 ===== SUCCESS =====
 
-Order ID: 12345678
-Status: FILLED
-Executed Qty: 0.001
+Order ID: 15030469894
+Status: NEW
+Executed Qty: 0.0000
 ```
 
----
+## Validation Rules
+
+* Side must be BUY or SELL
+* Order type must be MARKET or LIMIT
+* Quantity must be greater than 0
+* LIMIT orders require a price
 
 ## Logging
 
@@ -124,24 +97,13 @@ Logs are stored in:
 logs/bot.log
 ```
 
-The following events are logged:
+The application logs:
 
-* Order requests
-* Order responses
+* API requests
+* API responses
 * Validation failures
-* API errors
-* Runtime exceptions
-
----
-
-## Validation Rules
-
-* Side must be BUY or SELL
-* Order type must be MARKET or LIMIT
-* Quantity must be greater than 0
-* LIMIT orders require a price
-
----
+* Runtime errors
+* Binance API exceptions
 
 ## Error Handling
 
@@ -149,33 +111,27 @@ The application handles:
 
 * Invalid user input
 * Missing parameters
-* API authentication failures
-* Network-related issues
+* Authentication failures
+* Network failures
 * Binance API exceptions
 
----
+## Testing Status
+
+Successfully tested with Binance Futures Demo API credentials.
+
+Verified:
+
+* API authentication
+* Account balance retrieval
+* CLI argument parsing
+* Market order placement
+* Response processing
+* Logging functionality
 
 ## Assumptions
 
-* The user provides valid Binance Futures Testnet credentials.
-* API credentials are stored securely in a `.env` file.
-* The application is executed from the project root directory.
-
----
-
-## Notes
-
-Due to Binance account verification requirements, API credentials are not included in this repository.
-
-To test the application:
-
-1. Create a Binance Futures Testnet account.
-2. Generate API credentials.
-3. Add credentials to the `.env` file.
-4. Run the commands shown above.
-
-The application can be verified using any valid Binance Futures Testnet API credentials.
-
----
+* User has valid Binance Futures Demo API credentials.
+* API credentials are stored in a `.env` file.
+* Application is executed from the project root directory.
 
 
