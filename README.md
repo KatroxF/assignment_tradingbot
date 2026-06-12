@@ -40,7 +40,7 @@ TRADINGBOT/
 ## Installation
 
 ```bash
-git clone <(https://github.com/KatroxF/assignment_tradingbot/tree/master)>
+git clone <(https://github.com/KatroxF/assignment_tradingbot)>
 cd TRADINGBOT
 
 python -m venv venv
